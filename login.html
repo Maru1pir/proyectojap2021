@@ -13,6 +13,10 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <!--para inicio con google-->
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <style>
     html, body{
       height: 100%;
@@ -25,7 +29,7 @@
       align-items: center;
       padding-top: 40px;
       padding-bottom: 40px;
-      background-color: #f5f5f5;
+      background-color: #1f1e1e;
     }
 
     .signin {
@@ -36,18 +40,63 @@
     }
   </style>
 </head>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Iniciar sesión</h5>
+            <form id="formulario"> <!--action="index.html"-->
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" required>
+                <label for="floatingInput">Usuario</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                <label for="floatingPassword">Password</label>
+              </div>
 
-<body class="text-center">
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 08/08/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                <label class="form-check-label" for="rememberPasswordCheck">
+                  Remember password
+                </label>
+              </div>
+              <div class="d-grid">
+                <input class="btn btn-dark" type="submit" id="signin" value="LOGIN" >
+              </div>
+              <hr class="my-4">
+              <div class="d-grid">
+                <button class="btn btn-google btn-login text-uppercase fw-bold" type="submit">
+                  <i class="fab fa-google me-2"></i> Sign in with Google
+                </button>
+              </div>
+            </form>
+            <!--esto pasa google-->
+            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+            <script>
+              function onSignIn(googleUser) {
+                // Useful data for your client-side scripts:
+                var profile = googleUser.getBasicProfile();
+                console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+                console.log('Full Name: ' + profile.getName());
+                console.log('Given Name: ' + profile.getGivenName());
+                console.log('Family Name: ' + profile.getFamilyName());
+                console.log("Image URL: " + profile.getImageUrl());
+                console.log("Email: " + profile.getEmail());
+        
+                // The ID token you need to pass to your backend:
+                var id_token = googleUser.getAuthResponse().id_token;
+                console.log("ID Token: " + id_token);
+              }
+            </script>
+            <!--hasta aca-->
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
 </html>
+

@@ -45,3 +45,10 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
 });
+
+//se llama a user, para guardar en variable y poder compararlo
+//transformamos el string JSON nuevamente en JS
+let usuarioCreado = JSON.parse(sessionStorage.getItem("user"));
+if(usuarioCreado == undefined){
+  location.href = "login.html"
+};
