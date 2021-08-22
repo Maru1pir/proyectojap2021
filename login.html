@@ -45,34 +45,33 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card border-0 shadow rounded-3 my-5">
           <div class="card-body p-4 p-sm-5">
-            <h5 class="card-title text-center mb-5 fw-light fs-5">Iniciar sesión</h5>
-            <form id="formulario"> <!--action="index.html"-->
-              <div class="form-floating mb-3">
+            <h3 class="card-title text-center mb-5 font-weight-bold fs-5">Iniciar sesión</h3>
+            <form id="formulario">
+              <div class="mb-3">
                 <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" required>
-                <label for="floatingInput">Usuario</label>
+                <p class="mt-2"><label for="floatingInput">Usuario</label></p>
               </div>
-              <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
-                <label for="floatingPassword">Password</label>
+              <div class="mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
+                <p class="mt-2"><label for="floatingPassword">Contraseña</label></p>
               </div>
 
-              <div class="form-check mb-3">
+              <div class="form-check mb-4">
                 <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
                 <label class="form-check-label" for="rememberPasswordCheck">
-                  Remember password
+                  Recordar contraseña
                 </label>
               </div>
-              <div class="d-grid">
-                <input class="btn btn-dark" type="submit" id="signin" value="LOGIN" >
+              <div class="mb-3">
+                <input class="btn btn-dark" type="submit" id="signin" value="LOGIN">
               </div>
               <hr class="my-4">
-              <div class="d-grid">
-                <button class="btn btn-google btn-login text-uppercase fw-bold" type="submit" value="Inicia Sesión con Google">
-                  <!--<i class="fab fa-google me-2"></i>--> 
+              <div class="mb-3">
+                <button class="btn btn-google text-uppercase" type="submit">
                 </button>
               </div>
             </form>
-            <!--esto pasa google-->
+            <!--script que da google para inicio de sesion-->
             <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
             <script>
               function onSignIn(googleUser) {
