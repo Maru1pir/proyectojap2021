@@ -1,4 +1,3 @@
-
 //me falta comentar este codigo...
 function showProductsList(array){
 
@@ -21,12 +20,11 @@ function showProductsList(array){
                     <h4 class="mb-1">` + product.currency + ` ` + product.cost + `</h4>
                 </div>
             </div>
-        </a>`
-            
+        </a>` 
+
     document.getElementById("products-list-container").innerHTML = htmlContentToAppend;
     }
 }
-
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
