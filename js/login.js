@@ -1,8 +1,7 @@
 const formulario = document.getElementById("formulario");
 const usuario = document.getElementById("floatingInput");
 const contrasena = document.getElementById("floatingPassword");
-const usernav = document.getElementById("usernav");
-const salir = document.getElementById("salir");
+
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
