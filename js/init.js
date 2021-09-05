@@ -40,15 +40,26 @@ var getJSONData = function(url){
     });
 }
 
+var nombreUsuario = document.getElementById("userName");
+
+function showData(){
+  //se llama a user, para guardar en variable y poder compararlo
+  //transformamos el string JSON nuevamente en JS
+    let usuarioCreado = JSON.parse(localStorage.getItem("user"));
+    if(usuarioCreado == undefined){
+      location.href = "login.html"
+    }else{
+      let {usuario} = JSON.parse(localStorage.getItem("user"));
+      nombreUsuario.innerHTML =
+      `Hola, ` + usuario;
+    }; 
+};
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-});
+  
+  showData();
 
-//se llama a user, para guardar en variable y poder compararlo
-//transformamos el string JSON nuevamente en JS
-let usuarioCreado = JSON.parse(sessionStorage.getItem("user"));
-if(usuarioCreado == undefined){
-  location.href = "login.html"
-};
+});

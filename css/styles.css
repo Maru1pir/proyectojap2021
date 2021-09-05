@@ -57,6 +57,16 @@ footer p {
 .site-header a {
   color: white;
   transition: ease-in-out color .15s;
+  font-size: 1.3vw !important;
+  margin-top: 5px !important;
+}
+
+.site-header p {
+  color: white;
+  transition: ease-in-out color .15s;
+  font-size: 1.3vw !important;
+  margin-top: 5px !important;
+  font-weight: bolder !important;
 }
 
 .light-text {
@@ -138,4 +148,76 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+/* css de codepen*/
+
+input {
+	outline: none;
+}
+input[type=search] {
+	-webkit-appearance: textfield;
+  box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+
+input[type=search] {
+	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 7px 9px 7px 32px;
+	width: 55px;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: grey;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+	color: grey;
+}
+input::-webkit-input-placeholder {
+	color: grey;
+}
+  
+#buscar input[type=search] {
+	width: 15px;
+	padding-left: 10px;
+	color: transparent;
+	cursor: pointer;
+}
+#buscar input[type=search]:hover {
+	background-color: #fff;
+}
+#buscar input[type=search]:focus {
+	width: 130px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+#buscar input:-moz-placeholder {
+	color: transparent;
+}
+#buscar input::-webkit-input-placeholder {
+	color: transparent;
 }

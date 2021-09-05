@@ -1,28 +1,42 @@
-const ORDER_ASC_BY_NAME = "AZ";
-const ORDER_DESC_BY_NAME = "ZA";
-const ORDER_BY_PROD_COUNT = "Cant.";
-var currentCategoriesArray = [];
-var currentSortCriteria = undefined;
+const ORDER_ASC_BY_NAME = "AZ";//constante ascende
+const ORDER_DESC_BY_NAME = "ZA"; //constante descendente
+const ORDER_BY_PROD_COUNT = "Cant.";//constante por cant. vendidos
+var currentCategoriesArray = []; //arreglo vacio
+var currentSortCriteria = undefined; //variables indefinidas
 var minCount = undefined;
 var maxCount = undefined;
+var buscar = document.getElementById("buscar");
 
-function sortCategories(criteria, array){
-    let result = [];
-    if (criteria === ORDER_ASC_BY_NAME)
+//agrego evento que toma valor de las teclas
+buscar.addEventListener("keyup", (event) => 
     {
-        result = array.sort(function(a, b) {
+        var valorIngresado = event.target.value.toLowerCase();//guardo el valor de las teclas presionadas en minuscula
+        var categoriasFiltradas = currentCategoriesArray.filter((categoria) => {
+          return (
+              categoria.name.toLowerCase().includes(valorIngresado) || 
+              categoria.description.toLowerCase().includes(valorIngresado)
+          );
+        }) //recorro el arreglo de categorias y guardo filtrados las categorias que incluyen en nombre o descripcion los letras presionadas
+        sortAndShowCategories (ORDER_ASC_BY_NAME, categoriasFiltradas); //llamo funcion pasando parametro solo productos filtrados   
+    });
+
+function sortCategories(criteria, array){ 
+    let result = [];//arreglo vacio
+    if (criteria === ORDER_ASC_BY_NAME) //si el criterio que elegiste es ascendente alfbetico entonces
+    {
+        result = array.sort(function(a, b) {   //arreglo de categorias alfabetico ascendente
             if ( a.name < b.name ){ return -1; }
             if ( a.name > b.name ){ return 1; }
             return 0;
         });
-    }else if (criteria === ORDER_DESC_BY_NAME){
-        result = array.sort(function(a, b) {
+    }else if (criteria === ORDER_DESC_BY_NAME){  //si el criterio es descendente alfabetico 
+        result = array.sort(function(a, b) {    //arreglo de categorias alfabetico descendente
             if ( a.name > b.name ){ return -1; }
             if ( a.name < b.name ){ return 1; }
             return 0;
         });
-    }else if (criteria === ORDER_BY_PROD_COUNT){
-        result = array.sort(function(a, b) {
+    }else if (criteria === ORDER_BY_PROD_COUNT){ // si el criterio es por cantidad de articulos 
+        result = array.sort(function(a, b) {    //del que tiene mas articulos al menos
             let aCount = parseInt(a.productCount);
             let bCount = parseInt(b.productCount);
 
@@ -32,7 +46,7 @@ function sortCategories(criteria, array){
         });
     }
 
-    return result;
+    return result; //retorna arreglo con el criterio seleccionado
 }
 
 function showCategoriesList(){
@@ -133,4 +147,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         showCategoriesList();
     });
+
+    
 });
+
+
