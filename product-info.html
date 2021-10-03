@@ -17,19 +17,34 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
+  <nav class="site-header sticky-top bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a id="salir" class="py-2 d-none d-md-inline-block" href="login.html">Salir</a>
-      <p id="userName" class="py-2 d-none d-md-inline-block"></p>
+      <!--agregamos el menu desplegable con las opciones de ir a mi perfil, carrito, y un logout que me redirija a iniciar sesion-->
+      <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
+          <p id="userName" class="d-none d-md-inline-block"></p>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a id="salir" class="dropdown-item" href="login.html">Salir</a>
+        </div>
+      </div>
     </div>
   </nav>
   <div id="productInfo">
-  </div>  
+  </div> 
+  <hr><br>
+  <div class="container"><h6 class="display-4 font-weight-bold">Productos relacionados</h6></div> 
+  <div>
+    <div id="relatedProducts" class="row">
+    </div>
+  </div>
+  <br><hr><br>
   <div class="container"><h6 class="display-4 font-weight-bold">Deja tu comentario</h6></div>
   <div>
     <section style="background-color: #eee;">

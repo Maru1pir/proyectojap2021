@@ -13,7 +13,7 @@ function calificacionEstrellas(numeroEstrellas){
     html += str2.repeat(parseInt((5 - numeroEstrellas)));
    
     return html;
-}
+};
 
 //inserta un carrusel de imagenes de ina lista
 function carrusel(lista){
@@ -30,7 +30,7 @@ function carrusel(lista){
             </div>`
     }
     return html2
-}
+};
 
 //funcion que agrega el contenido del producto a pagina 
 function showProductInfo(info){
@@ -84,7 +84,38 @@ function showProductInfo(info){
 
     document.getElementById("productInfo").innerHTML = htmlContentToAppend;
 
-}
+};
+
+//de
+function showRelatedProducts(info){
+
+    getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
+        if (resultObj.status === "ok")
+        {
+            let getRelatedProducts = resultObj.data.relatedProducts;
+        
+            let htmlContentToAppend3 = "";
+            getRelatedProducts.forEach(i =>{
+            
+                htmlContentToAppend3 += 
+                    `<div class="col-6">
+                        <a href="product-info.html">
+                            <div class="card">
+                                <img src="` + info[i].imgSrc + `" class="card-img-top" alt="...">
+                                    <div class="card-body">   
+                                        <h5 class="card-title"><b>` + info[i].name + `</b></h5>
+                                        <p class="card-text" style="color: black;">` + info[i].description + `</p>
+                                    </div>
+                            </div>
+                        </a>
+                        <br>
+                    </div>`
+                
+            })
+            document.getElementById("relatedProducts").innerHTML += htmlContentToAppend3;
+        }
+    })  
+};
 
 //funcion para insertar los comentarios en la pagina
 function showComments(info){
@@ -104,11 +135,11 @@ function showComments(info){
             <p class="mt-3 mb-4 pb-2">` + info[i].description  + `</p>
         </div><hr>`
         
-        }
+    }
 
     document.getElementById("comments").innerHTML += htmlContentToAppend2;
 
-}
+};
 
 //funcion que toma numero de estrellas seleccionadas en caja de comentarios
 function starValue(){
@@ -121,7 +152,7 @@ function starValue(){
     }
     let starValueChecked = parseInt(document.estrellas.star[i].value);
     return starValueChecked;
-}
+};
 
 //funcion de darle formato al comentario como los anteriores, mostrando fecha actual y nombre de usuario
 function newComment(){
@@ -137,7 +168,7 @@ function newComment(){
     showComments(addComment); 
     addComment.pop(comentario);
 
-}
+};
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -147,9 +178,8 @@ document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
-            showProductInfo(resultObj.data);  
+            showProductInfo(resultObj.data); 
         }
-
     });
 
     //llamo la informacion de los comentarios
@@ -157,6 +187,14 @@ document.addEventListener("DOMContentLoaded", function(e){
         if (resultObj2.status === "ok")
         {
             showComments(resultObj2.data);
+        }
+    });
+
+    //llamo a la info en products para mostrar en productos relacionados
+    getJSONData(PRODUCTS_URL).then(function(resultObj3){
+        if (resultObj3.status === "ok")
+        {
+            showRelatedProducts(resultObj3.data);
         }
     });
 
@@ -169,7 +207,3 @@ document.addEventListener("DOMContentLoaded", function(e){
     });
 
 });
-
-
-
-          
