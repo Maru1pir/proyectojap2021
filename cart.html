@@ -53,14 +53,114 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <br><br>
+  <!--agregamos articulos de carrito con table-->
+  <div id="table-cart" class="container">
+    <table class="table">
+      <thead class="thead-dark text-justify">
+        <tr>
+          <th scope="col" class="text-center">Articulo</th>
+          <th scope="col" class="text-center">Descripcion</th>
+          <th scope="col" class="text-center">Precio</th>
+          <th scope="col" class="text-center">Cantidad</th>
+          <th scope="col" class="text-center">Total por articulo</th>
+        </tr>
+      </thead>
+      <tbody id="cart-articles" class="text-justify">
+      </tbody>
+      <thead class="thead-dark text-justify">        
+        <tr>
+          <th></th>
+          <th>
+            <div class="form-check float-right">
+              <input type="radio" class="form-check-input" id="UYU" name="monedas" checked>
+              <label class="form-check-label" for="UYU">UYU</label>
+            </div>
+          </th>
+          <th>
+            <div class="form-check float-left">
+              <input type="radio" class="form-check-input" id="USD" name="monedas">
+              <label class="form-check-label" for="USD">USD</label>
+            </div>
+          </th>
+          <th>Subtotal</th>
+          <th id="subtotal" class="text-center"></th>
+        </tr>
+        <tr>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <th colspan="5">Métodos de Envío</th>
+        </tr>
+      </thead>
+    </table>
+    <br>
+    <div class="form-check">
+      <input type="radio" class="form-check-input" id="envio1" name="tiposDeEnvio">
+      <label class="form-check-label" for="envio1">Premium (2-5 días)</label>
+    </div>
+    <div class="form-check">
+      <input type="radio" class="form-check-input" id="envio2" name="tiposDeEnvio" checked>
+      <label class="form-check-label" for="envio2">Express (5-8 días)</label>
+    </div>
+    <div class="form-check">
+      <input type="radio" class="form-check-input" id="envio3" name="tiposDeEnvio">
+      <label class="form-check-label" for="envio3">Standard (12-15 días)</label>
     </div>
   </div>
+  <br>
+  <div id="table-cart" class="container">
+    <table class="table">
+      <thead class="thead-dark text-justify">
+        <tr>
+          <th colspan="5">Médios de pago</th>
+        </tr>
+    </thead>
+  </table>
+</div>
+<br>
+<div class="container">
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="pago1" name="tiposDePago">
+  <label class="form-check-label" for="pago1">Tarjeta de credito</label>
+</div>
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="pago2" name="tiposDePago" checked>
+  <label class="form-check-label" for="pago2">Transferencia Bancaria</label>
+</div>
+<br>
+</div>
+      <div id="table-cart" class="container">
+        <table class="table">
+          <thead class="thead-dark text-justify">
+            <tr>
+              <th colspan="5">Datos de Envío</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <form action="" class="container">
+      <label for="fname">Direccion</label><br>
+      <label for="calle">Calle:</label><br>
+      <input type="text" id="calle" name="calle"><br>
+      <label for="numero">Numero de puerta:</label><br>
+      <input type="text" id="numero" name="numero"><br>
+      <label for="esquina">Esquina:</label><br>
+      <input type="text" id="esquina" name="esquina"><br>
+      <label for="pais">Pais:</label><br>
+      <input type="text" id="pais" name="pais"><br><br>
+      <input type="submit" class="btn btn-dark" value="Continuar">
+     </form>     
+    
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

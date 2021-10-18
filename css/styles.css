@@ -279,3 +279,7 @@ label.star:before {
   content: '\f006';
   font-family: FontAwesome
 }
+
+input.cantidad {
+  width: 60px;
+}
