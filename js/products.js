@@ -67,21 +67,19 @@ function showProductsList(){
             ((maxPrice == undefined) || (maxPrice != undefined && parseInt(product.cost) <= maxPrice))){
 
             htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <a href="product-info.html" class="list-group-item list-group-item-action h-100">
+                    <div><img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail"></div>
+                    <div class="d-flex w-100 justify-content-between">
+                        <h3 class="mb-1">`+ product.name +`</h3>
+                        <small class="text-muted">` + product.soldCount + ` vendidos</small>
                     </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h3 class="mb-1">`+ product.name +`</h3>
-                            <small class="text-muted">` + product.soldCount + ` vendidos</small>
-                        </div>
-                        <p class="mb-1">` + product.description + `</p>
-                        <h4 class="mb-1">` + product.currency + ` ` + product.cost + `</h4>
-                    </div>
-                </div>
-            </a>` 
+                    
+                    <p class="mb-1">` + product.description + `</p>
+                    <br>
+                    <h4 class="mb-1">` + product.currency + ` ` + product.cost + `</h4>
+                </a>
+            </div>` 
         }
 
         document.getElementById("products-list-container").innerHTML = htmlContentToAppend;

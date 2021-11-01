@@ -34,23 +34,36 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <!--agregamos el menu desplegable con las opciones de ir a mi perfil, carrito, y un logout que me redirija a iniciar sesion-->
-      <div class="dropdown">
-        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
-          <p id="userName" class="d-none d-md-inline-block"></p>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-          <a class="dropdown-item" href="cart.html">Mi carrito</a>
-          <a id="salir" class="dropdown-item" href="login.html">Salir</a>
-        </div>
-      </div>
+  <nav class="site-header sticky-top bg-dark navbar-expand-lg navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+      <ul class="w-75 navbar-nav d-flex justify-content-between">
+        <li class="nav-item active d-inline px-2">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item active d-inline px-2">
+          <a class="nav-link" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item active d-inline px-2">
+          <a class="nav-link" href="products.html">Productos</a>
+        </li>
+        <li class="nav-item active d-inline px-2">
+          <a class="nav-link" href="sell.html">Vender</a>
+        </li>
+        <!--agregamos el menu desplegable con las opciones de ir a mi perfil, carrito, y un logout que me redirija a iniciar sesion-->
+        <li class="dropdown nav-item d-inline px-2">
+          <button class="btn btn-dark dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
+            <p id="userName" class="d-none d-inline"></p>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+            <a class="dropdown-item" href="cart.html">Mi carrito</a>
+            <a id="salir" class="dropdown-item" href="login.html">Salir</a>
+          </div>
+        </li>
+      </ul>
     </div>
   </nav>
   <br><br>
@@ -115,43 +128,42 @@
         <tr>
           <th colspan="5">Médios de pago</th>
         </tr>
-    </thead>
-  </table>
-</div>
-<br>
-<div class="container">
-<div class="form-check">
-  <input type="radio" class="form-check-input" id="pago1" name="tiposDePago">
-  <label class="form-check-label" for="pago1">Tarjeta de credito</label>
-</div>
-<div class="form-check">
-  <input type="radio" class="form-check-input" id="pago2" name="tiposDePago" checked>
-  <label class="form-check-label" for="pago2">Transferencia Bancaria</label>
-</div>
-<br>
-</div>
-      <div id="table-cart" class="container">
-        <table class="table">
-          <thead class="thead-dark text-justify">
-            <tr>
-              <th colspan="5">Datos de Envío</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-      <form action="" class="container">
-      <label for="fname">Direccion</label><br>
-      <label for="calle">Calle:</label><br>
-      <input type="text" id="calle" name="calle"><br>
-      <label for="numero">Numero de puerta:</label><br>
-      <input type="text" id="numero" name="numero"><br>
-      <label for="esquina">Esquina:</label><br>
-      <input type="text" id="esquina" name="esquina"><br>
-      <label for="pais">Pais:</label><br>
-      <input type="text" id="pais" name="pais"><br><br>
-      <input type="submit" class="btn btn-dark" value="Continuar">
-     </form>     
-    
+      </thead>
+    </table>
+  </div>
+  <br>
+  <div class="container">
+    <div class="form-check">
+      <input type="radio" class="form-check-input" id="pago1" name="tiposDePago">
+      <label class="form-check-label" for="pago1">Tarjeta de credito</label>
+    </div>
+    <div class="form-check">
+      <input type="radio" class="form-check-input" id="pago2" name="tiposDePago" checked>
+      <label class="form-check-label" for="pago2">Transferencia Bancaria</label>
+    </div>
+    <br>
+  </div>
+  <div id="table-cart" class="container">
+    <table class="table">
+      <thead class="thead-dark text-justify">
+        <tr>
+          <th colspan="5">Datos de Envío</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <form action="" class="container">
+    <strong><label for="fname">Direccion</label></strong><br>
+    <label for="calle">Calle:</label><br>
+    <input type="text" id="calle" name="calle"><br>
+    <label for="numero">Numero de puerta:</label><br>
+    <input type="text" id="numero" name="numero"><br>
+    <label for="esquina">Esquina:</label><br>
+    <input type="text" id="esquina" name="esquina"><br>
+    <label for="pais">Pais:</label><br>
+    <input type="text" id="pais" name="pais"><br><br>
+    <input type="submit" class="btn btn-dark" value="Continuar">
+  </form>     
   <footer class="text-muted bg-light">
     <div class="container">
       <p class="float-right">
@@ -174,6 +186,5 @@
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
-  </body>
-
+</body>
 </html>

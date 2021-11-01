@@ -14,36 +14,49 @@
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="site-header sticky-top bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <!--agregamos el menu desplegable con las opciones de ir a mi perfil, carrito, y un logout que me redirija a iniciar sesion-->
-        <div class="dropdown">
-          <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
-            <p id="userName" class="d-none d-md-inline-block"></p>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-            <a class="dropdown-item" href="cart.html">Mi carrito</a>
-            <a id="salir" class="dropdown-item" href="login.html">Salir</a>
-          </div>
-        </div>
+    <nav class="site-header sticky-top bg-dark navbar-expand-lg navbar-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+        <ul class="w-75 navbar-nav d-flex justify-content-between">
+          <li class="nav-item active d-inline px-2">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item active d-inline px-2">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item active d-inline px-2">
+            <a class="nav-link" href="products.html">Productos</a>
+          </li>
+          <li class="nav-item active d-inline px-2">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <!--agregamos el menu desplegable con las opciones de ir a mi perfil, carrito, y un logout que me redirija a iniciar sesion-->
+          <li class="dropdown nav-item d-inline px-2">
+            <button class="btn btn-dark dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
+              <p id="userName" class="d-none d-inline"></p>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+              <a class="dropdown-item" href="cart.html">Mi carrito</a>
+              <a id="salir" class="dropdown-item" href="login.html">Salir</a>
+            </div>
+          </li>
+        </ul>
       </div>
     </nav>
     <main role="main">
       <section class="jumbotron jumbotron-fluid text-center">
         <div class="m-5">
-          <h1></h1>
+          <br><br><br><br><h1></h1>
         </div>
       </section>
       <div class="album py-5 bg-light">
         <div class="container">
           <div class="row">
             <div class="col-md-4">
-              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card h-100">
                 <img class="bd-placeholder-img card-img-top"  src="img/cat1.jpg">
                 <h3 class="m-3">Autos (122)</h3>
                 <div class="card-body">
@@ -52,7 +65,7 @@
               </a>
             </div>
             <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card h-100">
                   <img class="bd-placeholder-img card-img-top" src="img/cat2.jpg">
                   <h3 class="m-3">Juguetes (354)</h3>
                   <div class="card-body">
@@ -61,7 +74,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card h-100">
                   <img class="bd-placeholder-img card-img-top" src="img/cat3.jpg">
                   <h3 class="m-3">Muebles (157)</h3>
                   <div class="card-body">
@@ -70,7 +83,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card h-100">
                   <img class="bd-placeholder-img card-img-top" src="img/cat4.jpg">
                   <h3 class="m-3">Herramientas (452)</h3>
                   <div class="card-body">
@@ -79,7 +92,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card h-100">
                   <img class="bd-placeholder-img card-img-top" src="img/cat5.jpg">
                   <h3 class="m-3">Computadoras (724)</h3>
                   <div class="card-body">
@@ -88,7 +101,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card h-100">
                   <img class="bd-placeholder-img card-img-top" src="img/cat6.jpg">
                   <h3 class="m-3">Vestimenta (841)</h3>
                   <div class="card-body">

@@ -7,7 +7,6 @@
 }
 
 .jumbotron {
-  height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
   background-color: #53C0FB;
@@ -17,13 +16,9 @@
   background-repeat: no-repeat;
   color: black;
   font-weight: bold;
-}
-
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
+  height: 24vw;
+  width: auto;
+  
 }
 
 .jumbotron p:last-child {
@@ -282,4 +277,14 @@ label.star:before {
 
 input.cantidad {
   width: 60px;
+}
+
+input[type=file]::-webkit-file-upload-button {
+  border: 1px solid #ced4da;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  background: #fff;
+  border-radius: 0.25rem;
+  color: #495057;
+  line-height: 1.5;
 }
