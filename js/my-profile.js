@@ -10,7 +10,7 @@ const browser = document.getElementById("browser")
 const guardarPerfil = document.getElementById("perfil");
 
 browser.addEventListener("change", (e) =>{
-  let image = document.querySelector("input[type=file]").files[0];
+  let image = browser.files[0];
   let reader = new FileReader();
 
   if(image){
