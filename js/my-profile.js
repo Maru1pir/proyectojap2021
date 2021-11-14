@@ -33,10 +33,10 @@ guardarPerfil.addEventListener("submit", function(event){
     edad: edad.value,
     img: img.src,
   }
-    event.preventDefault(); //evita que llame a la funcion predefinida por el submit
-    //Guardar los usuarios y contrasenia localmente, como solo recibe string hay que convertir array a string
-    localStorage.setItem("profile", JSON.stringify(perfil));
-    alert("Perfil actualizado")
+  event.preventDefault(); //evita que llame a la funcion predefinida por el submit
+  //Guardar los usuarios y contrasenia localmente, como solo recibe string hay que convertir array a string
+  localStorage.setItem("profile", JSON.stringify(perfil));
+  alert("Perfil actualizado")
 });
 
 function perfilLocal(){
@@ -56,9 +56,8 @@ function perfilLocal(){
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+document.addEventListener("DOMContentLoaded", function(e){
 
-  document.addEventListener("DOMContentLoaded", function(e){
-
-    perfilLocal()
+  perfilLocal()
  
 });
