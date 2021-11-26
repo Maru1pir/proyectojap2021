@@ -70,7 +70,7 @@
   <!--agregamos articulos de carrito con table-->
   <form action="" class="container" onsubmit = "return(validar());" name="compra" id="compra">
     <!--Articulos Carrito-->
-    <div id="table-cart">
+    <div class="table-responsive">
       <table class="table">
         <thead class="thead-dark text-justify">
           <tr>
@@ -95,15 +95,20 @@
             <th id="subtotal" class="text-center subtotal2"></th>
             <th></th>
           </tr>
+        </thead>
+      </table>
+    </div>
+              <!--Metodos de envio-->
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="thead-dark text-justify">
           <tr>
-            <td colspan="5"></td>
-          </tr>
-          <!--Metodos de envio-->
-          <tr>
-            <th colspan="6">Métodos de Envío</th>
+            <th colspan="5">Métodos de Envío</th>
           </tr>
         </thead>
       </table>
+    </div>
+      
       <div class="container" id="tipoEnvio">
         <p hidden style="color: red;" id="tipoHidden">Debes ingresar un tipo de envio</p>
         <div class="form-check">
@@ -122,7 +127,7 @@
     </div>
     <br>
     <!--Medios de pago, va con modal al fin del html-->
-    <div id="table-cart">
+    <div class="table-responsive">
       <table class="table">
         <thead class="thead-dark text-justify">
           <tr>
@@ -140,7 +145,7 @@
     </div>
     <br><br>
     <!--Datos de envio-->
-    <div id="table-cart">
+    <div class="table-responsive">
       <table class="table">
         <thead class="thead-dark text-justify">
           <tr>
@@ -166,7 +171,7 @@
       </div>
     </div>
       <!--Costos totales-->
-      <div id="table-cart">
+      <div class="table-responsive">
         <table class="table">
           <thead class="thead-dark text-justify">
             <tr>
