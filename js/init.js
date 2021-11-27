@@ -56,14 +56,12 @@ function showData(){
 };
 
 function signOut(){
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function(){
-    console.log('User signed out.');
-    auth2.disconnect();
-  });
-  auth2.disconnect();
-
+  gapi.auth2.getAuthInstance().disconnect();
 }
+
+/*var revokeAllScopes = function() {
+  gapi.auth2.getAuthInstance().disconnect();
+}*/
 
 /*signOut() {
   if (window.gapi) {
