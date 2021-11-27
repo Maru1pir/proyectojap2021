@@ -86,11 +86,14 @@
                 } 
                 localStorage.setItem("user",JSON.stringify(usuariogoogle));
                  //Redireccionar a la pagina de inicio
-                window.location.href="index.html"
-        
-                // The ID token you need to pass to your backend:
+
+                 // The ID token you need to pass to your backend:
                 var id_token = googleUser.getAuthResponse().id_token;
                 console.log("ID Token: " + id_token);
+
+                window.location.href="index.html"
+        
+            
               }
 
             </script>
