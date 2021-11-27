@@ -81,8 +81,7 @@
                 console.log('Family Name: ' + profile.getFamilyName());
                 console.log("Image URL: " + profile.getImageUrl());
                 console.log("Email: " + profile.getEmail());
-                //Redireccionar a la pagina de inicio
-                //window.location.href="index.html"
+
                 let usuariogoogle = {
                   usuario: profile.getName(),
                 } 
@@ -92,7 +91,8 @@
                 var id_token = googleUser.getAuthResponse().id_token;
                 console.log("ID Token: " + id_token);
 
-               
+                //Redireccionar a la pagina de inicio
+                window.location.href="index.html"
         
             
               }
