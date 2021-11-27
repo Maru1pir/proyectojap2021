@@ -68,10 +68,11 @@
               <hr class="my-3">
             </form>
             <!--Botones google-->
-            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" id="googlebutton"></div>
             <a href="#" onclick="signOut();">Sign out</a>
             <!--script que da google para inicio y cierre de sesion-->
             <script>
+
               function onSignIn(googleUser) {
                 // Useful data for your client-side scripts:
                 var profile = googleUser.getBasicProfile();
@@ -81,6 +82,12 @@
                 console.log('Family Name: ' + profile.getFamilyName());
                 console.log("Image URL: " + profile.getImageUrl());
                 console.log("Email: " + profile.getEmail());
+                let usuariogoogle = {
+                  usuario: profile.getName(),
+                } 
+                event.preventDefault();
+                localStorage.setItem("user",JSON.stringify(usuariogoogle));
+                 //Redireccionar a la pagina de inicio
                 window.location.href="index.html"
         
                 // The ID token you need to pass to your backend:
@@ -92,6 +99,7 @@
                 auth2.signOut().then(function(){
                   console.log('User signed out.');
                 });
+
               }
             </script>
             <!--hasta aca-->
