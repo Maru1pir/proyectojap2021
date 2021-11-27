@@ -12,6 +12,10 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+      <!--para inicio con google-->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="709096198767-83n8jsr2ognttqkgsti7oe4vcpsrhfuc.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
     <nav class="site-header sticky-top bg-dark navbar-expand-lg navbar-dark">
@@ -40,7 +44,7 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
               <a class="dropdown-item" href="cart.html">Mi carrito</a>
-              <a id="salir" class="dropdown-item" href="login.html">Salir</a>
+              <a id="salir" class="dropdown-item" href="login.html" onclick="signOut();">Salir</a>
             </div>
           </li>
         </ul>
