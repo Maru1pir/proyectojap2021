@@ -59,19 +59,6 @@ function signOut(){
   gapi.auth2.getAuthInstance().disconnect();
 }
 
-/*var revokeAllScopes = function() {
-  gapi.auth2.getAuthInstance().disconnect();
-}*/
-
-/*signOut() {
-  if (window.gapi) {
-     const auth2 = window.gapi.auth2.getAuthInstance()
-     if (auth2 != null) {
-       auth2.signOut().then(auth2.disconnect().then(this.props.onLogoutSuccess))
-     }
-  }
-}*/
-
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
